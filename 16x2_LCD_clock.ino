@@ -11,10 +11,10 @@ int minutes = 00;  // Enter the minutes here
 int seconds = 07;  // Enter the seconds here
 int buttonMode = 1;  // Default buttonMode
 
-boolean modeSwitchA = false;
-boolean modeSwitchB = false;
-boolean modeSwitchC = false;
-boolean modeSwitchD = false;
+boolean s1 = false;
+boolean s2 = false;
+boolean s3 = false;
+boolean s4 = false;
 
 // Setting the two buttons
 Button buttonOne = Button(7, PULLDOWN);
@@ -285,9 +285,48 @@ void timeBrightness()
 // Switch 1 to Arduino port 4,5,6,9
 void modeSwitch()
 {
-	if (modeSwitchA.isPressed())
+	// Setting swith states booleans
+	if(modeSwitchA.isPressed())
 	{
-		
+		s1 = True;
+		else
+		{
+			s1 = False;
+		}
 	}
-		
+	
+	if(modeSwitchB.isPressed())
+	{
+		s2 = True;
+		else
+		{
+			s2 = False;
+		}
+	}
+	
+	if(modeSwitchC.isPressed())
+	{
+		s3 = True;
+		else
+		{
+			s3 = False;
+		}
+	}
+	
+	if(modeSwitchD.isPressed())
+	{
+		s4 = True;
+		else
+		{
+			s4 = False;
+		}
+	}
+	
+	// setting buttonMode variable
+	
+	if(s1)
+	{
+	
+	}
+	
 }
