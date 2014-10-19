@@ -11,23 +11,35 @@ int minutes = 00;  // Enter the minutes here
 int seconds = 07;  // Enter the seconds here
 int buttonMode = 1;  // Default buttonMode
 
-boolean s1 = false;
-boolean s2 = false;
-boolean s3 = false;
-boolean s4 = false;
+//boolean s1 = false;
+//boolean s2 = false;
+//boolean s3 = false;
+//boolean s4 = false;
+
+//different way for stiwtch states
+int state[3];
+int i;
+
 
 // Setting the two buttons
-Button buttonOne = Button(7, PULLDOWN);
-Button buttonTwo = Button(8, PULLDOWN);
+Button buttonOne = Button(8, PULLDOWN);
+Button buttonTwo = Button(9, PULLDOWN);
 
 //Setting the four button mode switches
-Button modeSwitchA = Button(4, PULLDOWN);
-Button modeSwitchB = Button(5, PULLDOWN);
-Button modeSwitchC = Butotn(6, PULLDOWN);
-button modeSwitchD = Button(9, PULLDOWN);
+//Button modeSwitchA = Button(4, PULLDOWN);
+//Button modeSwitchB = Button(5, PULLDOWN);
+//Button modeSwitchC = Butotn(6, PULLDOWN);
+//button modeSwitchD = Button(7, PULLDOWN);
 
 void setup()
 {
+	// special shit
+	for (i = 7; i >= 4; i--)
+	{
+		pinMode(i, INPUT);
+	}
+	// end special shit
+	
   lcd.begin(9600);  // Start the LCD at 9600 baud
   clearDisplay();  // Clear the display
   setLCDCursor(2);  // Set cursor to the 3rd spot, 1st line
@@ -42,11 +54,19 @@ void setup()
     delay(250);
     setBacklight(255);
     delay(250);
-  }
+  }  
 }
 
 void loop()
 {
+	// special shit
+	for (i = 0, j = 7; i < 6, j >= 2; i++, j--) {
+		state[i] = digitalRead(j);
+    }
+	
+	// end special shit
+	
+	
   manualAdjust();
   if (!(millis() % 1000))  // If it's been 1 second
   {
