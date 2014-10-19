@@ -10,8 +10,12 @@ int hours = 20;  // Enter the hours here
 int minutes = 00;  // Enter the minutes here
 int seconds = 07;  // Enter the seconds here
 
+// Setting the two buttons
 Button hourButton = Button(7,PULLDOWN);
 Button minuteButton = Button(8,PULLDOWN);
+
+//Setting the four button mode switches
+
 
 void setup()
 {
@@ -198,6 +202,8 @@ void printDate()
     lcd.print(year); 
 }
 
+
+// Function for setting backlight brightness based on time of day
 void timeBrightness()
 {
   if ((hours >= 0 && hours <= 3) || (hours >= 21 && hours <= 24))  //Dark
@@ -217,3 +223,34 @@ void timeBrightness()
       setBacklight(255);
     }
   }
+
+
+// Functions for button mode switch states. Using a four DIP switch package
+
+// Function for setting button mode switche A state
+// Switch 1 to Arduino port 4
+void selSwitchA()
+{
+
+}
+
+// Function for setting button mode switche A state
+// Switch 2 to Arduino port 5
+void selSwitchB()
+{
+
+}
+
+// Function for setting button mode switche A state
+// Switch 3 to Arduino port 6
+void selSwitchC()
+{
+
+}
+
+// Function for setting button mode switche A state
+// Switch 4 to Arduino port 9
+void selSwitchD()
+{
+
+}
