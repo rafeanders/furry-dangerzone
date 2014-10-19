@@ -9,13 +9,22 @@ int day = 6;  // 0 = Sunday, 6 = Saturday
 int hours = 20;  // Enter the hours here
 int minutes = 00;  // Enter the minutes here
 int seconds = 07;  // Enter the seconds here
+int buttonMode = 1;  // Default buttonMode
+
+boolean modeSwitchA = false;
+boolean modeSwitchB = false;
+boolean modeSwitchC = false;
+boolean modeSwitchD = false;
 
 // Setting the two buttons
-Button hourButton = Button(7,PULLDOWN);
-Button minuteButton = Button(8,PULLDOWN);
+Button buttonOne = Button(7, PULLDOWN);
+Button buttonTwo = Button(8, PULLDOWN);
 
 //Setting the four button mode switches
-
+Button modeSwitchA = Button(4, PULLDOWN);
+Button modeSwitchB = Button(5, PULLDOWN);
+Button modeSwitchC = Butotn(6, PULLDOWN);
+button modeSwitchD = Button(9, PULLDOWN);
 
 void setup()
 {
@@ -56,22 +65,70 @@ void loop()
 
 void manualAdjust()
 {
-  if(hourButton.uniquePress())
-  {
-    hours++;
-    if (hours == 24)
-    {
-      hours = 0;
-    }
-  }
-  if(minuteButton.uniquePress())
-  {
-    minutes++;
-    if (minutes == 60)
-    {
-      minutes = 0;
-    }
-  }
+	if(buttonMode == 1) // This mode sets the buttons to change the time incrementing hours and minutes up only
+	{
+	  if(buttonOne.uniquePress())
+	  {
+		hours++;
+		if (hours == 24)
+		{
+		  hours = 0;
+		}
+	  }
+	  if(buttonTwo.uniquePress())
+	  {
+		minutes++;
+		if (minutes == 60)
+		{
+		  minutes = 0;
+		}
+	  }
+	}
+	else if(buttonMode == 2) // This mode sets the buttons to change the Day up and down
+	{
+		if(buttonOne.uniquePress())
+		{
+			day ++;
+			if(day == 7)
+			{
+				day = 0;
+			}
+		}
+		if(buttonTwo.uniquePress())
+		{
+			day --;
+			if(day == -1)
+			{
+				day = 6
+			}
+		}
+	}
+	else if(buttonMode == 3) // This mode sets the buttons to change the Date Up and down
+	{
+		if(buttonOne.uniquePress())
+		{
+			date ++;
+			checkDate();
+		}
+		if(buttonTwo.uniquePress())
+		{
+			date --;
+			checkDate();
+		}
+	}
+	else if(buttonMode == 4) // This mode sets the buttons to increment month and year up 
+	{
+		if(buttonOne.uniquePress())
+		{
+			month ++;
+			checkDate();
+		}
+		if(buttonTwo.uniquePress())
+		{
+			year ++;
+			checkDate();
+		}
+	}
 }
 
 void setBacklight(byte brightness)
@@ -224,33 +281,13 @@ void timeBrightness()
     }
   }
 
-
-// Functions for button mode switch states. Using a four DIP switch package
-
-// Function for setting button mode switche A state
-// Switch 1 to Arduino port 4
-void selSwitchA()
+// Functionsfor button mode switch states. Using a four DIP switch package
+// Switch 1 to Arduino port 4,5,6,9
+void modeSwitch()
 {
-
-}
-
-// Function for setting button mode switche A state
-// Switch 2 to Arduino port 5
-void selSwitchB()
-{
-
-}
-
-// Function for setting button mode switche A state
-// Switch 3 to Arduino port 6
-void selSwitchC()
-{
-
-}
-
-// Function for setting button mode switche A state
-// Switch 4 to Arduino port 9
-void selSwitchD()
-{
-
+	if (modeSwitchA.isPressed())
+	{
+		
+	}
+		
 }
