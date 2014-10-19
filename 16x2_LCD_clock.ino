@@ -85,11 +85,7 @@ void loop()
 
 void manualAdjust()
 {
-	if(state[0])//(buttonMode == 1) // This mode sets the buttons to change the time incrementing hours and minutes up only
-	{
-		
-	}
-	else if(state[1]) //(buttonMode == 2) // This mode sets the buttons to change the Day up and down
+	if(state[0])//(buttonMode == 1) // This mode sets the buttons to change the time incrementing day up and down
 	{
 		if(buttonOne.uniquePress())
 		{
@@ -106,9 +102,9 @@ void manualAdjust()
 			{
 				day = 6
 			}
-		}
+		}		
 	}
-	else if(state[2]) //(buttonMode == 3) // This mode sets the buttons to change the Date Up and down
+	else if(state[0] && state[1]) //(buttonMode == 2) // This mode sets the buttons to change the date up and down
 	{
 		if(buttonOne.uniquePress())
 		{
@@ -121,7 +117,7 @@ void manualAdjust()
 			checkDate();
 		}
 	}
-	else if(state[3]) //(buttonMode == 4) // This mode sets the buttons to increment month and year up 
+	else if(state[1]) //(buttonMode == 3) // This mode sets the buttons to change the month Up and down
 	{
 		if(buttonOne.uniquePress())
 		{
@@ -130,11 +126,24 @@ void manualAdjust()
 		}
 		if(buttonTwo.uniquePress())
 		{
-			year ++;
+			month --;
 			checkDate();
 		}
 	}
-	else
+	else if(state[1] && state[2]) //(buttonMode == 4) // This mode sets the buttons to increment year up and down
+	{
+		if(buttonOne.uniquePress())
+		{
+			year ++;
+			checkDate();
+		}
+		if(buttonTwo.uniquePress())
+		{
+			year --;
+			checkDate();
+		}
+	}
+	else  // default button mode hours and minutes increment
 	{
 	  if(buttonOne.uniquePress())
 	  {
