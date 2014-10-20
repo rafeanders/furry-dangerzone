@@ -3,12 +3,12 @@
 
 SoftwareSerial lcd(2, 3);  // This is required, to start an instance of an LCD
 int year = 14;  // Enter the current year here, 11 = 2011
-int month = 9;  // Enter the current month here, 6 = June
-int date = 27;  // Enter the current date here
-int day = 6;  // 0 = Sunday, 6 = Saturday
-int hours = 20;  // Enter the hours here
+int month = 1;  // Enter the current month here, 6 = June
+int date = 1;  // Enter the current date here
+int day = 0;  // 0 = Sunday, 6 = Saturday
+int hours = 00;  // Enter the hours here
 int minutes = 00;  // Enter the minutes here
-int seconds = 07;  // Enter the seconds here
+int seconds = 00;  // Enter the seconds here
 
 //different way for stiwtch states
 int state[3];
