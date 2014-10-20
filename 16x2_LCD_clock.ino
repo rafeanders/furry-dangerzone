@@ -18,7 +18,7 @@ int seconds = 07;  // Enter the seconds here
 
 //different way for stiwtch states
 int state[3];
-int i;
+int i, j;
 
 
 // Setting the two buttons
@@ -100,7 +100,7 @@ void manualAdjust()
 			day --;
 			if(day == -1)
 			{
-				day = 6
+				day = 6;
 			}
 		}		
 	}
