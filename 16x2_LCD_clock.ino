@@ -316,50 +316,50 @@ void timeBrightness()
 
 // Functionsfor button mode switch states. Using a four DIP switch package
 // Switch 1 to Arduino port 4,5,6,9
-void modeSwitch()
-{
-	// Setting swith states booleans
-	if(modeSwitchA.isPressed())
-	{
-		s1 = True;
-		else
-		{
-			s1 = False;
-		}
-	}
-	
-	if(modeSwitchB.isPressed())
-	{
-		s2 = True;
-		else
-		{
-			s2 = False;
-		}
-	}
-	
-	if(modeSwitchC.isPressed())
-	{
-		s3 = True;
-		else
-		{
-			s3 = False;
-		}
-	}
-	
-	if(modeSwitchD.isPressed())
-	{
-		s4 = True;
-		else
-		{
-			s4 = False;
-		}
-	}
-	
-	// setting buttonMode variable
-	
-	if(s1)
-	{
-	
-	}
-	
-}
+//void modeSwitch()
+//{
+//	// Setting swith states booleans
+//	if(modeSwitchA.isPressed())
+//	{
+//		s1 = True;
+//		else
+//		{
+//			s1 = False;
+//		}
+//	}
+//	
+//	if(modeSwitchB.isPressed())
+//	{
+//		s2 = True;
+//		else
+//		{
+//			s2 = False;
+//		}
+//	}
+//	
+//	if(modeSwitchC.isPressed())
+//	{
+//		s3 = True;
+//		else
+//		{
+//			s3 = False;
+//		}
+//	}
+//	
+//	if(modeSwitchD.isPressed())
+//	{
+//		s4 = True;
+//		else
+//		{
+//			s4 = False;
+//		}
+//	}
+//	
+//	// setting buttonMode variable
+//	
+//	if(s1)
+//	{
+//	
+//	}
+//	
+//}
