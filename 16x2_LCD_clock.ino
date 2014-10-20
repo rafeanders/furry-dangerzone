@@ -9,27 +9,14 @@ int day = 6;  // 0 = Sunday, 6 = Saturday
 int hours = 20;  // Enter the hours here
 int minutes = 00;  // Enter the minutes here
 int seconds = 07;  // Enter the seconds here
-//int buttonMode = 1;  // Default buttonMode
-
-//boolean s1 = false;
-//boolean s2 = false;
-//boolean s3 = false;
-//boolean s4 = false;
 
 //different way for stiwtch states
 int state[3];
 int i, j;
 
-
 // Setting the two buttons
 Button buttonOne = Button(8, PULLDOWN);
 Button buttonTwo = Button(9, PULLDOWN);
-
-//Setting the four button mode switches
-//Button modeSwitchA = Button(4, PULLDOWN);
-//Button modeSwitchB = Button(5, PULLDOWN);
-//Button modeSwitchC = Butotn(6, PULLDOWN);
-//button modeSwitchD = Button(7, PULLDOWN);
 
 void setup()
 {
@@ -313,53 +300,4 @@ void timeBrightness()
       setBacklight(255);
     }
   }
-
-// Functionsfor button mode switch states. Using a four DIP switch package
-// Switch 1 to Arduino port 4,5,6,9
-//void modeSwitch()
-//{
-//	// Setting swith states booleans
-//	if(modeSwitchA.isPressed())
-//	{
-//		s1 = True;
-//		else
-//		{
-//			s1 = False;
-//		}
-//	}
-//	
-//	if(modeSwitchB.isPressed())
-//	{
-//		s2 = True;
-//		else
-//		{
-//			s2 = False;
-//		}
-//	}
-//	
-//	if(modeSwitchC.isPressed())
-//	{
-//		s3 = True;
-//		else
-//		{
-//			s3 = False;
-//		}
-//	}
-//	
-//	if(modeSwitchD.isPressed())
-//	{
-//		s4 = True;
-//		else
-//		{
-//			s4 = False;
-//		}
-//	}
-//	
-//	// setting buttonMode variable
-//	
-//	if(s1)
-//	{
-//	
-//	}
-//	
-//}
+  
